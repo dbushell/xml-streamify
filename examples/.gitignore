@@ -1,0 +1,6 @@
+/*
+!.gitignore
+!advanced
+advanced/*
+!**/*.ts
+!**/*.mjs

@@ -1,0 +1,10 @@
+/*
+!.gitignore
+!deno.json
+!README.md
+!LICENSE
+!examples
+!src
+src/*
+!**/*.ts
+!**/*.mjs
