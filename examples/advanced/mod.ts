@@ -21,7 +21,7 @@ setTimeout(() => {
 }, 10_000);
 
 for await (const node of parser) {
-  if (node.is(['channel', 'item'])) {
+  if (node.is('channel', 'item')) {
     let title = node.first('title')?.innerText;
     title = html.unescape(title ?? '');
     console.log(`Item found: ${title}`);
@@ -42,7 +42,7 @@ setTimeout(() => {
 
 try {
   for await (const node of parser) {
-    if (node.is(['channel', 'item'])) {
+    if (node.is('channel', 'item')) {
       let title = node.first('title')?.innerText;
       title = html.unescape(title ?? '');
       console.log(`Item found: ${title}`);

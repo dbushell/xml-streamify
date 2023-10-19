@@ -29,7 +29,7 @@ for await (const node of parser) {
   if (node.type === 'declaration') {
     console.log(toJSON(node));
   }
-  if (node.is(['channel', 'item'])) {
+  if (node.is('channel', 'item')) {
     console.log(toJSON(node));
     break;
   }

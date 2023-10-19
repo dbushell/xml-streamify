@@ -5,11 +5,11 @@ import {parse} from '../mod.min.mjs';
 const blog = async () => {
   const parser = parse('https://dbushell.com/rss.xml');
   for await (const node of parser) {
-    if (node.is(['channel', 'item'])) {
+    if (node.is('channel', 'item')) {
       console.log(node.first('title')?.innerText);
     }
     if (node.type === 'channel') {
-      const items = node.all(['item']);
+      const items = node.all('item');
       console.log(`Total items: ${items.length}`);
     }
   }
@@ -22,7 +22,7 @@ const podcast = async () => {
   });
   const items = [];
   for await (const node of parser) {
-    if (node.is(['channel', 'item'])) {
+    if (node.is('channel', 'item')) {
       items.push(node);
       if (items.length === 10) {
         contoller.abort();

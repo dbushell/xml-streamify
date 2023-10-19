@@ -16,7 +16,7 @@ The `parse` generator function is the main export. Below is a basic example that
 
 ```javascript
 for await (const node of parse('https://dbushell.com/rss.xml')) {
-  if (node.is(['channel', 'item'])) {
+  if (node.is('channel', 'item')) {
     console.log(node.first('title').innerText);
   }
 }

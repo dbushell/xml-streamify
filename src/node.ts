@@ -66,7 +66,7 @@ export class Node {
    * Returns true if node and parents match the key hierarchy
    * @param keys - XML tag names
    */
-  is(keys: string[]) {
+  is(...keys: string[]) {
     if (!keys.length) return false;
     let parent: Node | undefined;
     for (const key of keys.toReversed()) {
@@ -90,7 +90,7 @@ export class Node {
    * Return all children matching the key hierarchy
    * @param keys - XML tag names
    */
-  all(keys: string[] | string) {
+  all(...keys: string[]) {
     let nodes: Node[] | undefined = this.children;
     let found: Node[] = [];
     for (const [i, k] of Object.entries(keys)) {
