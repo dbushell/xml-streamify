@@ -45,6 +45,8 @@ In the `examples/advanced` directory there is a Deno web server. It will proxy R
 
 This project may not be fully XML compliant. It can handle XHTML in some cases. It will not parse HTML where elements like `<meta charset="utf-8">` are not self-closing and `<li>` do not require a closing `</li>` for example.
 
+Browsers may need a [polyfill](https://bugs.chromium.org/p/chromium/issues/detail?id=929585#c10) until they support async iterator on `ReadableStream`.
+
 † bring your own HTML entities decoder
 
 ‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489))
