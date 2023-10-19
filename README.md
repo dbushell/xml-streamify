@@ -22,7 +22,7 @@ for await (const node of parse('https://dbushell.com/rss.xml')) {
 }
 ```
 
-See [`src/types.ts`] for `parse` options.
+See [`src/types.ts`](/src/types.ts) for `parse` options.
 
 `parse` uses a lower level `XMLStream` that can be used alone:
 
@@ -35,7 +35,7 @@ for await (const [type, value] of stream) {
 }
 ```
 
-See `examples/advanced/stream.ts` for a full example.
+See [`examples/advanced/stream.ts`](/examples/advanced/stream.ts) for a full example.
 
 ## Advanced
 
