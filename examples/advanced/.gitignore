@@ -1,5 +1,4 @@
 /*
 !.gitignore
-!advanced
+!deno.json
 !*.ts
-!*.mjs

@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "bundle": "deno run --allow-env --allow-run --allow-read --allow-write bundle.ts",
+    "server": "deno run --allow-net server.ts"
+  },
+  "imports": {
+    "path": "https://deno.land/std@0.216.0/path/mod.ts",
+    "esbuild": "https://deno.land/x/esbuild@v0.20.0/mod.js"
+  }
+}
