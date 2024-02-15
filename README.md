@@ -12,6 +12,10 @@ Fetch and parse XML documents using the power of JavaScript web streams and asyn
 
 See the `examples` directory for platform specific examples.
 
+```javascript
+import {parse} from "jsr:@dbushell/xml-streamify@0.2";
+```
+
 The `parse` generator function is the main export. Below is a basic example that logs RSS item titles as they're found:
 
 ```javascript
@@ -51,6 +55,20 @@ Browsers may need a [polyfill](https://bugs.chromium.org/p/chromium/issues/detai
 
 ‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489))
 
+## NPM
+
+Add the [JavaScript Registry](https://jsr.io/) to `.npmrc`:
+
+```
+@jsr:registry=https://npm.jsr.io
+```
+
+Install the package:
+
+```sh
+npm install @jsr/dbushell__xml-streamify
+```
+
 * * *
 
-[MIT License](/LICENSE) | Copyright © 2023 [David Bushell](https://dbushell.com)
+[MIT License](/LICENSE) | Copyright © 2024 [David Bushell](https://dbushell.com)

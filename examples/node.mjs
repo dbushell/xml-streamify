@@ -1,6 +1,6 @@
 #!/usr/bin/env -S node
 
-import {parse} from '../mod.min.mjs';
+import {parse} from '@jsr/dbushell__xml-streamify';
 
 const blog = async () => {
   const parser = parse('https://dbushell.com/rss.xml');

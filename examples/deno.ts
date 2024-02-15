@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-net
 
-import {parse, Node} from '../mod.ts';
+import {parse, Node} from 'jsr:@dbushell/xml-streamify@0.2';
 
 const blog = async () => {
   const parser = parse('https://dbushell.com/rss.xml');

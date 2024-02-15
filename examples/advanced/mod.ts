@@ -1,4 +1,4 @@
-import * as html from 'https://deno.land/std@0.204.0/html/mod.ts';
+import * as html from 'https://deno.land/std@0.216.0/html/mod.ts';
 import {serverURL, serverController} from './server.ts';
 import {parse} from '../../mod.ts';
 
