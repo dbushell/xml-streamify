@@ -3,9 +3,9 @@
  */
 export class Node {
   #type: string;
-  #children: Node[];
+  #children: Array<Node>;
   #parent?: Node;
-  #attr?: {[key: string]: string};
+  #attr?: Record<string, string>;
   #raw?: string;
 
   constructor(type: string, parent?: Node, raw?: string) {
@@ -15,7 +15,7 @@ export class Node {
     this.#children = [];
   }
 
-  get type() {
+  get type(): string {
     return this.#type;
   }
 
@@ -23,15 +23,15 @@ export class Node {
     return this.#raw ?? '';
   }
 
-  get parent() {
+  get parent(): Node | undefined {
     return this.#parent;
   }
 
-  get children() {
+  get children(): Array<Node> {
     return this.#children;
   }
 
-  get attributes() {
+  get attributes(): Record<string, string> {
     if (this.#attr) {
       return this.#attr;
     }
@@ -47,7 +47,7 @@ export class Node {
     return this.#attr;
   }
 
-  get innerText() {
+  get innerText(): string {
     if (this.children.length) {
       let text = '';
       for (const child of this.children) {
@@ -58,7 +58,7 @@ export class Node {
     return (this.raw.match(/<!\[CDATA\[(.*?)]]>/s) ?? [, this.raw])[1];
   }
 
-  addChild(child: Node) {
+  addChild(child: Node): void {
     this.#children.push(child);
   }
 
@@ -66,7 +66,7 @@ export class Node {
    * Returns true if node and parents match the key hierarchy
    * @param keys - XML tag names
    */
-  is(...keys: string[]) {
+  is(...keys: Array<string>): boolean {
     if (!keys.length) return false;
     let parent: Node | undefined;
     for (const key of keys.toReversed()) {
@@ -82,7 +82,7 @@ export class Node {
    * Return the first child matching the key
    * @param key - XML tag name
    */
-  first(key: string) {
+  first(key: string): Node | undefined {
     return this.children.find((n) => n.type === key);
   }
 
@@ -90,9 +90,9 @@ export class Node {
    * Return all children matching the key hierarchy
    * @param keys - XML tag names
    */
-  all(...keys: string[]) {
-    let nodes: Node[] | undefined = this.children;
-    let found: Node[] = [];
+  all(...keys: Array<string>): Array<Node> {
+    let nodes: Array<Node> | undefined = this.children;
+    let found: Array<Node> = [];
     for (const [i, k] of Object.entries(keys)) {
       if (Number.parseInt(i) === keys.length - 1) {
         found = nodes.filter((n) => n.type === k);
