@@ -43,7 +43,7 @@ See [`examples/advanced/stream.ts`](/examples/advanced/stream.ts) for a full exa
 
 ## Advanced
 
-In the `examples/advanced` directory there is a Deno web server. It will proxy RSS feeds, add CORS headers, and throttle streaming speed for testing. Run `deno task server` for just the server. Run `deno run -A examples/advanced/mod.ts` for the full example script.
+In the `examples/advanced` directory there is a Deno web server. It will proxy RSS feeds, add CORS headers, and throttle streaming speed for testing. Run `deno run -A examples/advanced/mod.ts` for the full example script.
 
 ## Notes
 
