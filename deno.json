@@ -1,0 +1,11 @@
+{
+  "name": "@dbushell/xml-streamify",
+  "version": "0.2.0",
+  "exports": {
+    ".": "./mod.ts",
+    "./node": "./src/node.ts",
+    "./parse": "./src/parse.ts",
+    "./stream": "./src/stream.ts",
+    "./types": "./src/types.ts"
+  }
+}
