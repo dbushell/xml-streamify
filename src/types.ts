@@ -1,3 +1,8 @@
+/**
+ * @module
+ * Types for `@dbushell/xml-streamify`
+ */
+/** Options for `parse` async generator function */
 export interface ParseOptions {
   /** Abort signal for fetch and parser */
   signal?: AbortSignal;

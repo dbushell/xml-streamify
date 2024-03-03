@@ -1,6 +1,8 @@
 /**
- * XML node with helper methods to read data and traverse the tree
+ * @module
+ * Module exports an XML Node class
  */
+/** XML node with helper methods to read data and traverse the tree */
 export class Node {
   #type: string;
   #children: Array<Node>;

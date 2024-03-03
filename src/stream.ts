@@ -1,3 +1,7 @@
+/**
+ * @module
+ * Module exports a `TransformStream` class for decoding binary XML streams into structured data.
+ */
 import {NodeType, StateType} from './types.ts';
 
 type State = NodeType | StateType;
@@ -25,6 +29,7 @@ const ENTITIES = {
   }
 } as const;
 
+/** Transformer object for `TransformStream` constructed by `XMLStream` */
 export const transformer: Transformer<Uint8Array, [NodeType, string]> & {
   buf: string;
   state: State;
@@ -91,9 +96,7 @@ export const transformer: Transformer<Uint8Array, [NodeType, string]> & {
   }
 };
 
-/**
- * Convert a binary XML stream into a stream of XML nodes
- */
+/** Transform a binary XML stream into a stream of structured XML data */
 export class XMLStream extends TransformStream<Uint8Array, [NodeType, string]> {
   constructor() {
     super({...transformer});

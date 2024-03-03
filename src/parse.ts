@@ -1,3 +1,7 @@
+/**
+ * @module
+ * Module export an async generator function for parsing a streamed XML document.
+ */
 import type {ParseOptions} from './types.ts';
 import {NodeType} from './types.ts';
 import {Node} from './node.ts';
@@ -9,6 +13,12 @@ const ignoreTypes: Partial<Record<NodeType, keyof ParseOptions>> = {
   [NodeType.DOCTYPE]: 'ignoreDoctype'
 } as const;
 
+/**
+ * Async generator function for parsing a streamed XML document
+ * @param url      URL to fetch and parse
+ * @param options  Parsing options {@link ParseOptions}
+ * @returns Yields parsed XML nodes {@link Node}
+ */
 export async function* parse(
   url: string | URL,
   options?: ParseOptions

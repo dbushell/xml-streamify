@@ -10,7 +10,7 @@ Fetch and parse XML documents using the power of JavaScript web streams and asyn
 
 ## Usage
 
-See the `examples` directory for platform specific examples.
+Add dependency from JSR: [@dbushell/xml-streamify](https://jsr.io/@dbushell/xml-streamify). See the `examples` directory for platform specific examples.
 
 ```javascript
 import {parse} from "jsr:@dbushell/xml-streamify@0.2";
