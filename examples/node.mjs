@@ -1,6 +1,7 @@
 #!/usr/bin/env -S node
 
-import {parse} from '@jsr/dbushell__xml-streamify';
+// https://jsr.io/@dbushell/xml-streamify
+import {parse} from '@dbushell/xml-streamify';
 
 const blog = async () => {
   const parser = parse('https://dbushell.com/rss.xml');

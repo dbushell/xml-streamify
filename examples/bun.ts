@@ -1,6 +1,6 @@
 #!/usr/bin/env -S bun run
 
-import {parse, Node} from '../mod';
+import {parse, Node} from '../mod.ts';
 
 const blog = async () => {
   const parser = parse('https://dbushell.com/rss.xml');
