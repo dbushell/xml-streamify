@@ -1,6 +1,7 @@
 /**
- * @module
  * Module export an async generator function for parsing a streamed XML document.
+ *
+ * @module
  */
 import type {ParseOptions} from './types.ts';
 import {NodeType} from './types.ts';

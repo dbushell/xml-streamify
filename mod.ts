@@ -1,5 +1,6 @@
 /**
  * @module
+ *
  * Fetch and parse XML documents using web streams and async iterators.
  */
 export * from './src/node.ts';

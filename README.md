@@ -13,7 +13,7 @@ Fetch and parse XML documents using the power of JavaScript web streams and asyn
 Add dependency from JSR: [@dbushell/xml-streamify](https://jsr.io/@dbushell/xml-streamify). See the `examples` directory for platform specific examples.
 
 ```javascript
-import {parse} from "jsr:@dbushell/xml-streamify@0.2";
+import {parse} from "jsr:@dbushell/xml-streamify";
 ```
 
 The `parse` generator function is the main export. Below is a basic example that logs RSS item titles as they're found:

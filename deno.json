@@ -1,11 +1,15 @@
 {
   "name": "@dbushell/xml-streamify",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "exports": {
     ".": "./mod.ts",
     "./node": "./src/node.ts",
     "./parse": "./src/parse.ts",
     "./stream": "./src/stream.ts",
     "./types": "./src/types.ts"
+  },
+  "publish": {
+    "include": ["src", "deno.json", "mod.ts", "LICENSE", "README.md"],
+    "exclude": [".github", "examples"]
   }
 }

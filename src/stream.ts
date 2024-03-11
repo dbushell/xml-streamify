@@ -1,6 +1,7 @@
 /**
- * @module
  * Module exports a `TransformStream` class for decoding binary XML streams into structured data.
+ *
+ * @module
  */
 import {NodeType, StateType} from './types.ts';
 
