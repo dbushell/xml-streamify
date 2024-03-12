@@ -16,29 +16,36 @@ const ignoreTypes: Partial<Record<NodeType, keyof ParseOptions>> = {
 
 /**
  * Async generator function for parsing a streamed XML document
- * @param url      URL to fetch and parse
+ * @param input    URL to fetch and parse or a ReadableStream
  * @param options  Parsing options {@link ParseOptions}
  * @returns Yields parsed XML nodes {@link Node}
  */
 export async function* parse(
-  url: string | URL,
+  input: string | URL | ReadableStream,
   options?: ParseOptions
 ): AsyncGenerator<Node, Node | void, void> {
-  url = new URL(url);
-
   const document = new Node('@document');
-
   try {
     const init = {...options?.fetchOptions};
     if (options?.signal) {
       init.signal = options.signal;
     }
-    const response = await fetch(url, init);
-    if (!response.ok || !response.body) {
-      throw new Error(`Bad response`);
+
+    let source: ReadableStream;
+
+    // Fetch stream if URL is provided as input
+    if (typeof input === 'string' || input instanceof URL) {
+      input = new URL(input);
+      const response = await fetch(input, init);
+      if (!response.ok || !response.body) {
+        throw new Error(`Bad response`);
+      }
+      source = response.body;
+    } else {
+      source = input;
     }
 
-    const stream = response.body
+    const stream = source
       .pipeThrough(new TextDecoderStream())
       .pipeThrough(new XMLStream(), {
         signal: options?.signal
