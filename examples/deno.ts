@@ -17,7 +17,8 @@ const blog = async () => {
 
 const podcast = async () => {
   const contoller = new AbortController();
-  const parser = parse('https://feed.syntax.fm/rss', {
+  const response = await fetch('https://feed.syntax.fm/rss');
+  const parser = parse(response.body!, {
     signal: contoller.signal
   });
   const items: Node[] = [];
