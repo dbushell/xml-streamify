@@ -41,10 +41,10 @@ export class Node {
     // Setup and parse attributes on first access
     this.#attr = {};
     if (this.raw) {
-      const regex = /([\w:.-]+)\s*=\s*["'](.*?)["']/g;
+      const regex = /([\w:.-]+)\s*=\s*(["'])(.*?)\2/g;
       let match: RegExpExecArray | null;
       while ((match = regex.exec(this.raw)) !== null) {
-        this.#attr[match[1]] = match[2];
+        this.#attr[match[1]] = match[3];
       }
     }
     return this.#attr;
