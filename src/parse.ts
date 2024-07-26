@@ -16,7 +16,7 @@ const ignoreTypes: Partial<Record<NodeType, keyof ParseOptions>> = {
 
 /**
  * Async generator function for parsing a streamed XML document
- * @param input    URL to fetch and parse or a ReadableStream
+ * @param input    URL to fetch and parse (or a ReadableStream)
  * @param options  Parsing options {@link ParseOptions}
  * @returns Yields parsed XML nodes {@link Node}
  */
