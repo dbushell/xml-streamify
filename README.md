@@ -2,6 +2,8 @@
 
 Fetch and parse XML documents using the power of JavaScript web streams and async iterators ✨
 
+[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8)](https://jsr.io/@dbushell/xml-streamify) [![JSR Score](https://jsr.io/badges/@dbushell/xml-streamify/score?labelColor=98e6c8)](https://jsr.io/@dbushell/xml-streamify) [![JSR](https://jsr.io/badges/@dbushell?labelColor=98e6c8)](https://jsr.io/@dbushell)
+
 * Small, fast, zero dependencies †
 * Work with data before the fetch is complete
 * Cross-runtime support (Bun ‡, Deno, Node, and web browsers)
@@ -10,15 +12,11 @@ Fetch and parse XML documents using the power of JavaScript web streams and asyn
 
 ## Usage
 
-Add dependency from JSR: [@dbushell/xml-streamify](https://jsr.io/@dbushell/xml-streamify). See the `examples` directory for platform specific examples.
-
-```javascript
-import {parse} from "jsr:@dbushell/xml-streamify";
-```
-
 The `parse` generator function is the main export. Below is a basic example that logs RSS item titles as they're found:
 
 ```javascript
+import {parse} from "@dbushell/xml-streamify";
+
 for await (const node of parse('https://dbushell.com/rss.xml')) {
   if (node.is('channel', 'item')) {
     console.log(node.first('title').innerText);
@@ -39,9 +37,9 @@ for await (const [type, value] of stream) {
 }
 ```
 
-See [`examples/advanced/stream.ts`](/examples/advanced/stream.ts) for a full example.
-
 ## Advanced
+
+See the `examples` directory for more advanced and platform specific examples.
 
 In the `examples/advanced` directory there is a Deno web server. It will proxy RSS feeds, add CORS headers, and throttle streaming speed for testing. Run `deno run -A examples/advanced/mod.ts` for the full example script.
 
@@ -54,20 +52,6 @@ Browsers may need a [polyfill](https://bugs.chromium.org/p/chromium/issues/detai
 † bring your own HTML entities decoder
 
 ‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489))
-
-## NPM
-
-Add the [JavaScript Registry](https://jsr.io/) to `.npmrc`:
-
-```
-@jsr:registry=https://npm.jsr.io
-```
-
-Install the package:
-
-```sh
-npm install @jsr/dbushell__xml-streamify
-```
 
 * * *
 

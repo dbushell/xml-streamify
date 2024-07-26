@@ -6,6 +6,5 @@
 !LICENSE
 !examples
 !src
-src/*
-!**/*.ts
-!**/*.mjs
+src/**/*.*
+!src/**/*.ts
