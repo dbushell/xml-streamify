@@ -51,7 +51,7 @@ Browsers may need a [polyfill](https://bugs.chromium.org/p/chromium/issues/detai
 
 † bring your own HTML entities decoder
 
-‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489))
+‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489), [#4](https://github.com/dbushell/xml-streamify/issues/4))
 
 * * *
 
