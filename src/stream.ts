@@ -31,16 +31,14 @@ const ENTITIES = {
 } as const;
 
 /** Transformer object for `TransformStream` constructed by `XMLStream` */
-export const transformer: Transformer<Uint8Array, [NodeType, string]> & {
+export const transformer: Transformer<string, [NodeType, string]> & {
   buf: string;
   state: State;
   previous: [State, number];
-  decoder: TextDecoder;
 } = {
   buf: '',
   state: StateType.SKIP,
   previous: [StateType.SKIP, -1],
-  decoder: new TextDecoder(),
   flush(controller) {
     // Buffer should be empty if document is well-formed
     if (this.buf.length > 0) {
@@ -48,7 +46,7 @@ export const transformer: Transformer<Uint8Array, [NodeType, string]> & {
     }
   },
   transform(chunk, controller) {
-    this.buf += this.decoder.decode(chunk);
+    this.buf += chunk;
     while (this.buf.length) {
       // Break if no progress is made (entity may straddle chunk boundary)
       if (
@@ -98,7 +96,7 @@ export const transformer: Transformer<Uint8Array, [NodeType, string]> & {
 };
 
 /** Transform a binary XML stream into a stream of structured XML data */
-export class XMLStream extends TransformStream<Uint8Array, [NodeType, string]> {
+export class XMLStream extends TransformStream<string, [NodeType, string]> {
   constructor() {
     super({...transformer});
   }

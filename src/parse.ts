@@ -38,9 +38,11 @@ export async function* parse(
       throw new Error(`Bad response`);
     }
 
-    const stream = response.body.pipeThrough(new XMLStream(), {
-      signal: options?.signal
-    });
+    const stream = response.body
+      .pipeThrough(new TextDecoderStream())
+      .pipeThrough(new XMLStream(), {
+        signal: options?.signal
+      });
 
     // Set root document as current node
     let node = document;
