@@ -1,10 +1,12 @@
 /*
-!.gitignore
+/*.*
 !.github
+!.gitignore
 !deno.json
+!package.json
 !README.md
 !LICENSE
-!examples
+!mod.ts
 !src
-src/**/*.*
 !src/**/*.ts
+!examples

@@ -2,11 +2,11 @@
 
 Fetch and parse XML documents using the power of JavaScript web streams and async iterators ✨
 
-[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8)](https://jsr.io/@dbushell/xml-streamify) [![JSR Score](https://jsr.io/badges/@dbushell/xml-streamify/score?labelColor=98e6c8)](https://jsr.io/@dbushell/xml-streamify) [![JSR](https://jsr.io/badges/@dbushell?labelColor=98e6c8)](https://jsr.io/@dbushell)
+[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8&color=333)](https://jsr.io/@dbushell/xml-streamify) [![NPM](https://img.shields.io/npm/v/xml-streamify?labelColor=98e6c8&color=333)](https://www.npmjs.com/package/xml-streamify)
 
 * Small, fast, zero dependencies †
 * Work with data before the fetch is complete
-* Cross-runtime support (Bun ‡, Deno, Node, and web browsers)
+* Cross-runtime support (Bun, Deno, Node, and web browsers)
 
 **This is experimental work in progress.** But it does seem to work. It was designed to parse RSS feeds.
 
@@ -50,8 +50,6 @@ This project may not be fully XML compliant. It can handle XHTML in some cases. 
 Browsers may need a [polyfill](https://bugs.chromium.org/p/chromium/issues/detail?id=929585#c10) until they support async iterator on `ReadableStream`.
 
 † bring your own HTML entities decoder
-
-‡ Bun has issues ([#2489](https://github.com/oven-sh/bun/issues/2489), [#4](https://github.com/dbushell/xml-streamify/issues/4))
 
 * * *
 

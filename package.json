@@ -1,0 +1,30 @@
+{
+  "name": "xml-streamify",
+  "version": "0.6.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbushell/xml-streamify.git"
+  },
+  "description": "Fetch and parse XML documents using the power of JavaScript web streams and async iterators ✨",
+  "keywords": [
+    "xml",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./mod.ts",
+    "./node": "./src/node.ts",
+    "./parse": "./src/parse.ts",
+    "./stream": "./src/stream.ts",
+    "./types": "./src/types.ts"
+  },
+  "types": "src/types.ts",
+  "files": [
+    "src",
+    "mod.ts",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ]
+}
