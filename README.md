@@ -2,7 +2,7 @@
 
 Fetch and parse XML documents using the power of JavaScript web streams and async iterators ✨
 
-[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8&color=333)](https://jsr.io/@dbushell/xml-streamify) [![NPM](https://img.shields.io/npm/v/xml-streamify?labelColor=98e6c8&color=333)](https://www.npmjs.com/package/xml-streamify)
+[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8&color=333)](https://jsr.io/@dbushell/xml-streamify) [![NPM](https://img.shields.io/npm/v/@dbushell/xml-streamify?labelColor=98e6c8&color=333)](https://www.npmjs.com/package/@dbushell/xml-streamify)
 
 * Small, fast, zero dependencies †
 * Work with data before the fetch is complete
