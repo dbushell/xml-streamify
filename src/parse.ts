@@ -73,7 +73,7 @@ export async function* parse(
       }
       // Handle elements
       if (type === NodeType.ELEMENT) {
-        const name = value.match(/<\/?([\w:.]+)/)![1];
+        const name = value.match(/<\/?([\w:.-]+)/)![1];
         // Handle self-closing element
         if (value.endsWith('/>')) {
           const newNode = new Node(name, node, value);
