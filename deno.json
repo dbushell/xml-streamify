@@ -10,7 +10,7 @@
   },
   "publish": {
     "include": ["src", "mod.ts", "deno.json", "LICENSE", "README.md"],
-    "exclude": [".github", "examples"]
+    "exclude": [".github", "package.json", "examples"]
   },
   "lint": {
     "include": ["**/*.ts"]
