@@ -1,6 +1,6 @@
 {
   "name": "@dbushell/xml-streamify",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "exports": {
     ".": "./mod.ts",
     "./node": "./src/node.ts",

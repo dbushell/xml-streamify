@@ -15,6 +15,24 @@ const ignoreTypes: Partial<Record<NodeType, keyof ParseOptions>> = {
 } as const;
 
 /**
+ * Polyfill for `stream[Symbol.asyncIterator]`
+ */
+async function* asyncIterableStream(
+  stream: ReadableStream<[NodeType, string]>,
+): AsyncGenerator<[NodeType, string], void, unknown> {
+  const reader = stream.getReader();
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      yield value;
+    }
+  } finally {
+    reader.releaseLock();
+  }
+}
+
+/**
  * Async generator function for parsing a streamed XML document
  * @param input    URL to fetch and parse (or a ReadableStream)
  * @param options  Parsing options {@link ParseOptions}
@@ -50,6 +68,13 @@ export async function* parse(
       .pipeThrough(new XMLStream(), {
         signal: options?.signal
       });
+
+    // Apply polyfill if necessary
+    if (typeof stream[Symbol.asyncIterator] !== 'function') {
+      stream[Symbol.asyncIterator] = async function* () {
+        yield* asyncIterableStream(stream);
+      };
+    }
 
     // Set root document as current node
     let node = document;
